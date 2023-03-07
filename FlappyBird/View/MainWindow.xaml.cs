@@ -121,7 +121,7 @@ namespace FlappyBird
                 RemoveObstacle();
                 controller.GotPoint = false;
             }
-            else if (controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X - controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y + controller.CurrentBox.Rec.Height >= controller.ObstacleList[0].Coords.Y - controller.ObstacleList[0].Rec.Height && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height >= controller.ObstacleList[0].Coords2.Y + controller.ObstacleList[0].RecTop.Height)
+            else if (controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X - controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y + controller.CurrentBox.Rec.Height <= controller.ObstacleList[0].Coords.Y - controller.ObstacleList[0].Rec.Height && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height >= controller.ObstacleList[0].Coords2.Y + controller.ObstacleList[0].RecTop.Height)
             {
                 if (!controller.GotPoint)
                 {

@@ -27,7 +27,7 @@ namespace FlappyBird.Model
             RecTop.Height = 700 - Height;
             coords2.Y = -450 ;
             RecTop.Width = 50;
-            RecTop.Fill = Brushes.Blue;
+            RecTop.Fill = Brushes.Green;
             RecTop.Margin = new Thickness(coords2.X, coords2.Y, 0, 0);
         }
 
