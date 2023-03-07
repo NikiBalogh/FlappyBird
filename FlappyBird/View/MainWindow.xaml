@@ -1,0 +1,60 @@
+﻿<Window x:Class="FlappyBird.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlappyBird"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid x:Name="gridStartScreen">
+            <Label Content="Flappy Box" HorizontalAlignment="Center" Margin="0,77,0,0" VerticalAlignment="Top" FontSize="35"/>
+            <Button x:Name="btnStartGame" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="116" FontSize="20" Click="btnStartGame_Click"/>
+            <TextBox x:Name="textBoxUsername" HorizontalAlignment="Left" Margin="591,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="30"/>
+            <Label Content="Username" HorizontalAlignment="Left" Margin="590,272,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <Button x:Name="btnViewHighScores" Content="High Scores" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="116" FontSize="20" Click="btnViewHighScores_Click" RenderTransformOrigin="0.495,0.521" Margin="91,300,0,0"/>
+            <Button x:Name="btnNewPlayer" Content="New Player" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="116" FontSize="20" Click="btnNewPlayer_Click" RenderTransformOrigin="0.495,0.521" Margin="91,150,0,0"/>
+
+        </Grid>
+        <Grid x:Name="gridGame" Visibility="Collapsed">
+            <!--<Label x:Name="lblTest" Content="Label" HorizontalAlignment="Left" Margin="166,317,0,0" VerticalAlignment="Top"/>-->
+            <Label Content="Score:" HorizontalAlignment="Left" Margin="33,25,0,0" VerticalAlignment="Top" FontSize="35"/>
+            <Label x:Name="lblcurrentScore" Content="0" HorizontalAlignment="Left" Margin="140,25,0,0" VerticalAlignment="Top" FontSize="35"/>
+
+        </Grid>
+        <Grid x:Name="gridHighScores" Visibility="Collapsed">
+            <Label x:Name="lblHighScore1" Content="1:" HorizontalAlignment="Left" Margin="66,45,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore2" Content="2:" HorizontalAlignment="Left" Margin="66,90,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore3" Content="3:" HorizontalAlignment="Left" Margin="66,135,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore4" Content="4:" HorizontalAlignment="Left" Margin="66,180,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore5" Content="5:" HorizontalAlignment="Left" Margin="66,225,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore6" Content="6:" HorizontalAlignment="Left" Margin="66,270,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore7" Content="7:" HorizontalAlignment="Left" Margin="66,315,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore8" Content="8:" HorizontalAlignment="Left" Margin="66,360,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore9" Content="9:" HorizontalAlignment="Left" Margin="400,45,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHighScore10" Content="10:" HorizontalAlignment="Left" Margin="400,90,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="116" FontSize="20" Click="btnMainMenu_Click" RenderTransformOrigin="0.495,0.521" Margin="629,333,0,0"/>
+
+        </Grid>
+        <Grid x:Name="gridNewPlayer" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" Height="335" Margin="161,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="463" Fill="#FFBCBCBC"/>
+            <Label Content="Name:" HorizontalAlignment="Left" Margin="285,80,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <TextBox x:Name="textBoxNewPlayerName" HorizontalAlignment="Left" Margin="392,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" FontSize="25"/>
+            <Label Content="Phone Number:" HorizontalAlignment="Left" Margin="185,146,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <TextBox x:Name="textBoxNewPlayerPhone" HorizontalAlignment="Left" Margin="392,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" FontSize="25"/>
+            <Label Content="Email:" HorizontalAlignment="Left" Margin="295,205,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <TextBox x:Name="textBoxNewPlayerEmail" HorizontalAlignment="Left" Margin="392,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" FontSize="25"/>
+            <Button x:Name="btnNewPlayerCancel" Content="Cancel" HorizontalAlignment="Left" Margin="185,314,0,0" VerticalAlignment="Top" FontSize="25" Height="50" Width="141" Click="btnNewPlayerCancel_Click"/>
+            <Button x:Name="btnNewPlayerConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="431,310,0,0" VerticalAlignment="Top" FontSize="25" Height="50" Width="141" Click="btnNewPlayerConfirm_Click"/>
+
+        </Grid>
+        <Grid x:Name="gridGameOver" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" Height="335" Margin="161,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="463" Fill="#FFBCBCBC"/>
+            <Label x:Name="lblGameOverScore" Content="" HorizontalAlignment="Left" Margin="369,166,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <Label Content="Score" HorizontalAlignment="Left" Margin="345,111,0,0" VerticalAlignment="Top" FontSize="28"/>
+            <Label Content="Game Over" HorizontalAlignment="Left" Margin="313,57,0,0" VerticalAlignment="Top" FontSize="30"/>
+            <Button x:Name="btnBackToTitle" Content="OK" HorizontalAlignment="Left" Margin="316,281,0,0" VerticalAlignment="Top" FontSize="25" Height="71" Width="164" Click="btnBackToTitle_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
