@@ -49,7 +49,7 @@ namespace FlappyBird.Controller
         {
             if (currentPlayer.CheckIfPlayerNameExists(Name, players))
             {
-                MessageBox.Show("Could not create player because name was already in database", "Warning Message");
+                MessageBox.Show("Could not create player because name was already in database", "Warning Message", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
