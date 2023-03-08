@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 using FlappyBird.Model;
 
 namespace FlappyBird.Controller
@@ -48,7 +49,7 @@ namespace FlappyBird.Controller
         {
             if (currentPlayer.CheckIfPlayerNameExists(Name, players))
             {
-
+                MessageBox.Show("Could not create player because name was already in database", "Warning Message");
             }
             else
             {

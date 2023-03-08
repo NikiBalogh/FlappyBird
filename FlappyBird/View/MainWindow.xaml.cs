@@ -215,13 +215,13 @@ namespace FlappyBird
                 if (ifPhoneAInt)
                 {
                     controller.PlayerList = controller.CreateUser(textBoxNewPlayerName.Text, textBoxNewPlayerEmail.Text, phoneNumber, controller.PlayerList);
+                    gridStartScreen.Visibility = Visibility.Visible;
+                    gridNewPlayer.Visibility = Visibility.Collapsed;
+                    textBoxNewPlayerName.Text = "";
+                    textBoxNewPlayerPhone.Text = "";
+                    textBoxNewPlayerEmail.Text = "";
                 }
             }
-            gridStartScreen.Visibility = Visibility.Visible;
-            gridNewPlayer.Visibility = Visibility.Collapsed;
-            textBoxNewPlayerName.Text = "";
-            textBoxNewPlayerPhone.Text = "";
-            textBoxNewPlayerEmail.Text = "";
         }
 
         private void btnNewPlayerCancel_Click(object sender, RoutedEventArgs e)
