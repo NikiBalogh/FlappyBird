@@ -129,16 +129,16 @@ namespace FlappyBird
                     controller.GotPoint = true;
                 }
             }
-            else if (controller.CurrentBox.Coords.Y >= 450 || controller.CurrentBox.Coords.Y <= -450)
-            {
-                GameOver();
-            }
-            else if ((controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X - controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height >= controller.ObstacleList[0].Coords.Y - controller.ObstacleList[0].Rec.Height) || (controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X - controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height <= controller.ObstacleList[0].Coords2.Y + controller.ObstacleList[0].RecTop.Height))
+            else if ((controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X + controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height >= controller.ObstacleList[0].Coords.Y - controller.ObstacleList[0].Rec.Height) || (controller.CurrentBox.Coords.X + controller.CurrentBox.Rec.Width >= controller.ObstacleList[0].Coords.X - controller.ObstacleList[0].Rec.Width && controller.CurrentBox.Coords.Y - controller.CurrentBox.Rec.Height <= controller.ObstacleList[0].Coords2.Y + controller.ObstacleList[0].RecTop.Height))
             {
                 if (!controller.GotPoint)
                 {
                     GameOver();
                 }
+            }
+            else if (controller.CurrentBox.Coords.Y >= 450 || controller.CurrentBox.Coords.Y <= -450)
+            {
+                GameOver();
             }
 
         }
@@ -146,13 +146,6 @@ namespace FlappyBird
         {
             controller.CurrentPlayer.Score.Points++;
             lblcurrentScore.Content = controller.CurrentPlayer.Score.Points;
-            /*if (score > highscore)
-            {
-                highscore = score;
-                lblHighscore.Content = $"Highscore: {highscore}";
-            }
-            RemoveFood();
-            Scaling();*/
         }
         private void ResetScore()
         {
